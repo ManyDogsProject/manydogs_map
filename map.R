@@ -18,6 +18,7 @@ our_cities <- world.cities %>%
            (name == "Padova" & country.etc == "Italy") |
            (name == "Portsmouth" & country.etc == "UK") |
            (name == "Providence" & country.etc == "USA") |
+           (name == "Rijeka" & country.etc == "Croatia") |
            (name == "Santa Rosa" & country.etc == "USA") |
            (name == "Tucson" & country.etc == "USA") |
            (name == "Vienna" & country.etc == "Austria") |
@@ -27,7 +28,7 @@ our_cities <- world.cities %>%
          # (name == "Pullman" & country.etc == "USA") |
   ) %>%
   select(city = name, country = country.etc, lat, long) %>%
-  mutate(lab = c("IWU Dog Scientists, Illinois Wesleyan University", "Canine Cognition Center, Boston College", "Human-Animal Interaction Lab, Oregon State University", "Duke Canine Cognition Center, Duke University", "Canine Cognition and Human Interaction Lab, University of Nebraska-Lincoln ", "Pet Behaviour Consulting, Università degli Studi di Messina", "Canine Cognition Center, Yale University", "Thinking Dog Center, Hunter College", "DogUP, Università degli Studi di Padova", "Dog Cognition Centre, University of Portsmouth", "Brown Dog Lab, Brown University", "Canine Companions", "Arizona Canine Cognition Center, University of Arizona", "The Clever Dog Lab, University of Veterinary Medicine Vienna", "Animal Health and Welfare Centre, University Centre Sparsholt", "Comparative Cognition Lab, University of Manitoba"), .before = 1) %>%
+  mutate(lab = c("IWU Dog Scientists, Illinois Wesleyan University", "Canine Cognition Center, Boston College", "Human-Animal Interaction Lab, Oregon State University", "Duke Canine Cognition Center, Duke University", "Canine Cognition and Human Interaction Lab, University of Nebraska-Lincoln ", "Pet Behaviour Consulting, Università degli Studi di Messina", "Canine Cognition Center, Yale University", "Thinking Dog Center, Hunter College", "DogUP, Università degli Studi di Padova", "Dog Cognition Centre, University of Portsmouth", "Brown Dog Lab, Brown University","Comparative Cognitive Science Lab, University of Rijeka", "Canine Companions", "Arizona Canine Cognition Center, University of Arizona", "The Clever Dog Lab, University of Veterinary Medicine Vienna", "Animal Health and Welfare Centre, University Centre Sparsholt", "Comparative Cognition Lab, University of Manitoba"), .before = 1) %>%
   add_row(lab = "Laboratory for Comparative Ethnobiology, Washington State University", city = "Pullman", country = "USA", lat = 46.73, long = -117.17) %>%
   add_row(lab = "Canine Language Perception Lab, University of Maryland, College Park", city = "College Park", country = "USA", lat = 39.00, long = -76.93)
 
@@ -79,7 +80,7 @@ htmlwidgets::saveWidget(partial_bundle(northamerica_fig), "na_labs.html", selfco
 
 
 
-# Plot North America labs -------------------------------------------------
+# Plot European labs -------------------------------------------------
 
 # geo styling
 europe_labs <- list(
@@ -124,5 +125,5 @@ htmlwidgets::saveWidget(partial_bundle(europe_fig), "europe_labs.html", selfcont
 
 
 file.copy(from = "na_labs_small.html", to = "../manydogsproject.github.io/assets/html/na_labs.html", overwrite = TRUE)
-file.copy(from = "europe_labs_small.html", to = "../manydogsproject.github.io/assets/html/europe_labs.html", overwrite = TRUE)
+file.copy(from = "europe_labs.html", to = "../manydogsproject.github.io/assets/html/europe_labs.html", overwrite = TRUE)
 file.copy(from = "lib", to = "../manydogsproject.github.io/assets/html", overwrite = TRUE, recursive = TRUE)
