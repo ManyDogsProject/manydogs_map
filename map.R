@@ -124,6 +124,6 @@ export(europe_fig, "europe_labs.png")
 htmlwidgets::saveWidget(partial_bundle(europe_fig), "europe_labs.html", selfcontained = FALSE, libdir = "lib")
 
 
-file.copy(from = "na_labs_small.html", to = "../manydogsproject.github.io/assets/html/na_labs.html", overwrite = TRUE)
+file.copy(from = "na_labs.html", to = "../manydogsproject.github.io/assets/html/na_labs.html", overwrite = TRUE)
 file.copy(from = "europe_labs.html", to = "../manydogsproject.github.io/assets/html/europe_labs.html", overwrite = TRUE)
 file.copy(from = "lib", to = "../manydogsproject.github.io/assets/html", overwrite = TRUE, recursive = TRUE)
